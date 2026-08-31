@@ -1,0 +1,40 @@
+{
+  "report_id": "RPT-31BA0439ACCD",
+  "parent_ulpin": "7A4B9C2D8E1F6G",
+  "timestamp": "2024-11-20T12:00:00+05:30",
+  "generated_by": "BhuDrishti3D_Pipeline_v0.9.1",
+  "input_hash": "197728d59d773cf6303e23b44c7a018863958854d439a9bf0b911460663c6986",
+  "qr_payload": {
+    "report_id": "RPT-31BA0439ACCD",
+    "parent_ulpin": "7A4B9C2D8E1F6G",
+    "timestamp": "2024-11-20T12:00:00+05:30",
+    "sha256_hash": "197728d59d773cf6303e23b44c7a018863958854d439a9bf0b911460663c6986",
+    "verification_type": "bhudrishti_3d_local"
+  },
+  "summary": {
+    "building_name": "Shanti Heights Tower-A",
+    "num_floors": 6,
+    "num_units": 8,
+    "num_valid_units": 5,
+    "num_conflicts": 3,
+    "overall_confidence": 0.87
+  },
+  "confidence_scores": {
+    "overall": 0.87,
+    "geometric_accuracy": 0.92,
+    "topological_consistency": 0.81,
+    "semantic_completeness": 0.88,
+    "source_reliability": 0.9
+  },
+  "output_files": {
+    "html": {
+      "path": "output\\BhuDrishti3D_validation_report.html",
+      "sha256": "fc1a3f55f8baf8b8776ad9bf69f030de72175331fb96ee33f82e53e7bf3dae05"
+    },
+    "pdf": {
+      "path": "output\\BhuDrishti3D_validation_report.pdf",
+      "sha256": "6ffe7f2ba0e72f8fdf7e107c21af22f756597e6acc114399c7bf9d66fde2b6af"
+    }
+  },
+  "disclaimer": "Prototype decision-support output. Final cadastral verification, ownership determination and legal record approval remain with the authorized land-record authority."
+}

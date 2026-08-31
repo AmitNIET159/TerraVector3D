@@ -1,0 +1,11 @@
+numpy
+scipy
+shapely
+pydantic>=2
+opencv-python-headless
+scikit-learn
+Pillow
+pytest
+# open3d — optional; required for RANSAC plane detection.
+# Install when your Python version is supported (<=3.12).
+# The module falls back to numpy-based methods when Open3D is absent.

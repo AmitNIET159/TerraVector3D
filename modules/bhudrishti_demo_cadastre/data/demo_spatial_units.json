@@ -1,0 +1,740 @@
+[
+  {
+    "unit_id": "UNIT-B1-P01",
+    "vertical_id": "7A4B9C2D8E1F6G-FB1-UP01-R01",
+    "parent_ulpin": "7A4B9C2D8E1F6G",
+    "building_id": "BLD-GHA-001",
+    "level_code": "B1",
+    "unit_type": "parking",
+    "footprint": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            5.0,
+            5.0
+          ],
+          [
+            10.0,
+            5.0
+          ],
+          [
+            10.0,
+            7.5
+          ],
+          [
+            5.0,
+            7.5
+          ],
+          [
+            5.0,
+            5.0
+          ]
+        ]
+      ]
+    },
+    "z_min_m": -3.0,
+    "z_max_m": 0.0,
+    "area_sqm": 12.5,
+    "usage_type": "covered_parking",
+    "status": "registered",
+    "model_object_name": "B1_parking_P01"
+  },
+  {
+    "unit_id": "UNIT-B1-P02",
+    "vertical_id": "7A4B9C2D8E1F6G-FB1-UP02-R01",
+    "parent_ulpin": "7A4B9C2D8E1F6G",
+    "building_id": "BLD-GHA-001",
+    "level_code": "B1",
+    "unit_type": "parking",
+    "footprint": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            10.0,
+            5.0
+          ],
+          [
+            15.0,
+            5.0
+          ],
+          [
+            15.0,
+            7.5
+          ],
+          [
+            10.0,
+            7.5
+          ],
+          [
+            10.0,
+            5.0
+          ]
+        ]
+      ]
+    },
+    "z_min_m": -3.0,
+    "z_max_m": 0.0,
+    "area_sqm": 12.5,
+    "usage_type": "covered_parking",
+    "status": "registered",
+    "model_object_name": "B1_parking_P02"
+  },
+  {
+    "unit_id": "UNIT-B1-P03",
+    "vertical_id": "7A4B9C2D8E1F6G-FB1-UP03-R01",
+    "parent_ulpin": "7A4B9C2D8E1F6G",
+    "building_id": "BLD-GHA-001",
+    "level_code": "B1",
+    "unit_type": "parking",
+    "footprint": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            15.0,
+            5.0
+          ],
+          [
+            20.0,
+            5.0
+          ],
+          [
+            20.0,
+            7.5
+          ],
+          [
+            15.0,
+            7.5
+          ],
+          [
+            15.0,
+            5.0
+          ]
+        ]
+      ]
+    },
+    "z_min_m": -3.0,
+    "z_max_m": 0.0,
+    "area_sqm": 12.5,
+    "usage_type": "covered_parking",
+    "status": "registered",
+    "model_object_name": "B1_parking_P03"
+  },
+  {
+    "unit_id": "UNIT-B1-P04",
+    "vertical_id": "7A4B9C2D8E1F6G-FB1-UP04-R01",
+    "parent_ulpin": "7A4B9C2D8E1F6G",
+    "building_id": "BLD-GHA-001",
+    "level_code": "B1",
+    "unit_type": "parking",
+    "footprint": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            20.0,
+            5.0
+          ],
+          [
+            25.0,
+            5.0
+          ],
+          [
+            25.0,
+            7.5
+          ],
+          [
+            20.0,
+            7.5
+          ],
+          [
+            20.0,
+            5.0
+          ]
+        ]
+      ]
+    },
+    "z_min_m": -3.0,
+    "z_max_m": 0.0,
+    "area_sqm": 12.5,
+    "usage_type": "covered_parking",
+    "status": "registered",
+    "model_object_name": "B1_parking_P04"
+  },
+  {
+    "unit_id": "UNIT-B1-P05",
+    "vertical_id": "7A4B9C2D8E1F6G-FB1-UP05-R01",
+    "parent_ulpin": "7A4B9C2D8E1F6G",
+    "building_id": "BLD-GHA-001",
+    "level_code": "B1",
+    "unit_type": "parking",
+    "footprint": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            25.0,
+            5.0
+          ],
+          [
+            30.0,
+            5.0
+          ],
+          [
+            30.0,
+            7.5
+          ],
+          [
+            25.0,
+            7.5
+          ],
+          [
+            25.0,
+            5.0
+          ]
+        ]
+      ]
+    },
+    "z_min_m": -3.0,
+    "z_max_m": 0.0,
+    "area_sqm": 12.5,
+    "usage_type": "covered_parking",
+    "status": "registered",
+    "model_object_name": "B1_parking_P05"
+  },
+  {
+    "unit_id": "UNIT-B1-P06",
+    "vertical_id": "7A4B9C2D8E1F6G-FB1-UP06-R01",
+    "parent_ulpin": "7A4B9C2D8E1F6G",
+    "building_id": "BLD-GHA-001",
+    "level_code": "B1",
+    "unit_type": "parking",
+    "footprint": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            30.0,
+            5.0
+          ],
+          [
+            35.0,
+            5.0
+          ],
+          [
+            35.0,
+            7.5
+          ],
+          [
+            30.0,
+            7.5
+          ],
+          [
+            30.0,
+            5.0
+          ]
+        ]
+      ]
+    },
+    "z_min_m": -3.0,
+    "z_max_m": 0.0,
+    "area_sqm": 12.5,
+    "usage_type": "covered_parking",
+    "status": "registered",
+    "model_object_name": "B1_parking_P06"
+  },
+  {
+    "unit_id": "UNIT-B1-UTIL01",
+    "vertical_id": "7A4B9C2D8E1F6G-FB1-UUTIL01-R01",
+    "parent_ulpin": "7A4B9C2D8E1F6G",
+    "building_id": "BLD-GHA-001",
+    "level_code": "B1",
+    "unit_type": "utility_corridor",
+    "footprint": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            5.0,
+            22.0
+          ],
+          [
+            35.0,
+            22.0
+          ],
+          [
+            35.0,
+            25.0
+          ],
+          [
+            5.0,
+            25.0
+          ],
+          [
+            5.0,
+            22.0
+          ]
+        ]
+      ]
+    },
+    "z_min_m": -3.0,
+    "z_max_m": 0.0,
+    "area_sqm": 90.0,
+    "usage_type": "services_corridor",
+    "status": "registered",
+    "model_object_name": "B1_utility_UTIL01"
+  },
+  {
+    "unit_id": "UNIT-G-LOBBY01",
+    "vertical_id": "7A4B9C2D8E1F6G-FG-ULOBBY01-R01",
+    "parent_ulpin": "7A4B9C2D8E1F6G",
+    "building_id": "BLD-GHA-001",
+    "level_code": "G",
+    "unit_type": "common_area",
+    "footprint": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            5.0,
+            5.0
+          ],
+          [
+            35.0,
+            5.0
+          ],
+          [
+            35.0,
+            25.0
+          ],
+          [
+            5.0,
+            25.0
+          ],
+          [
+            5.0,
+            5.0
+          ]
+        ]
+      ]
+    },
+    "z_min_m": 0.0,
+    "z_max_m": 4.0,
+    "area_sqm": 600.0,
+    "usage_type": "lobby",
+    "status": "registered",
+    "model_object_name": "G_common_LOBBY01"
+  },
+  {
+    "unit_id": "UNIT-F01-101",
+    "vertical_id": "7A4B9C2D8E1F6G-F01-U101-R01",
+    "parent_ulpin": "7A4B9C2D8E1F6G",
+    "building_id": "BLD-GHA-001",
+    "level_code": "01",
+    "unit_type": "apartment",
+    "footprint": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            5.0,
+            5.0
+          ],
+          [
+            20.0,
+            5.0
+          ],
+          [
+            20.0,
+            25.0
+          ],
+          [
+            5.0,
+            25.0
+          ],
+          [
+            5.0,
+            5.0
+          ]
+        ]
+      ]
+    },
+    "z_min_m": 4.0,
+    "z_max_m": 7.0,
+    "area_sqm": 300.0,
+    "usage_type": "residential",
+    "status": "registered",
+    "model_object_name": "F01_apartment_101"
+  },
+  {
+    "unit_id": "UNIT-F01-102",
+    "vertical_id": "7A4B9C2D8E1F6G-F01-U102-R01",
+    "parent_ulpin": "7A4B9C2D8E1F6G",
+    "building_id": "BLD-GHA-001",
+    "level_code": "01",
+    "unit_type": "apartment",
+    "footprint": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            20.0,
+            5.0
+          ],
+          [
+            35.0,
+            5.0
+          ],
+          [
+            35.0,
+            25.0
+          ],
+          [
+            20.0,
+            25.0
+          ],
+          [
+            20.0,
+            5.0
+          ]
+        ]
+      ]
+    },
+    "z_min_m": 4.0,
+    "z_max_m": 7.0,
+    "area_sqm": 300.0,
+    "usage_type": "residential",
+    "status": "registered",
+    "model_object_name": "F01_apartment_102"
+  },
+  {
+    "unit_id": "UNIT-F02-201",
+    "vertical_id": "7A4B9C2D8E1F6G-F02-U201-R01",
+    "parent_ulpin": "7A4B9C2D8E1F6G",
+    "building_id": "BLD-GHA-001",
+    "level_code": "02",
+    "unit_type": "apartment",
+    "footprint": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            5.0,
+            5.0
+          ],
+          [
+            20.0,
+            5.0
+          ],
+          [
+            20.0,
+            25.0
+          ],
+          [
+            5.0,
+            25.0
+          ],
+          [
+            5.0,
+            5.0
+          ]
+        ]
+      ]
+    },
+    "z_min_m": 7.0,
+    "z_max_m": 10.0,
+    "area_sqm": 300.0,
+    "usage_type": "residential",
+    "status": "registered",
+    "model_object_name": "F02_apartment_201"
+  },
+  {
+    "unit_id": "UNIT-F02-202",
+    "vertical_id": "7A4B9C2D8E1F6G-F02-U202-R01",
+    "parent_ulpin": "7A4B9C2D8E1F6G",
+    "building_id": "BLD-GHA-001",
+    "level_code": "02",
+    "unit_type": "apartment",
+    "footprint": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            20.0,
+            5.0
+          ],
+          [
+            35.0,
+            5.0
+          ],
+          [
+            35.0,
+            25.0
+          ],
+          [
+            20.0,
+            25.0
+          ],
+          [
+            20.0,
+            5.0
+          ]
+        ]
+      ]
+    },
+    "z_min_m": 7.0,
+    "z_max_m": 10.0,
+    "area_sqm": 300.0,
+    "usage_type": "residential",
+    "status": "registered",
+    "model_object_name": "F02_apartment_202"
+  },
+  {
+    "unit_id": "UNIT-F03-301",
+    "vertical_id": "7A4B9C2D8E1F6G-F03-U301-R01",
+    "parent_ulpin": "7A4B9C2D8E1F6G",
+    "building_id": "BLD-GHA-001",
+    "level_code": "03",
+    "unit_type": "apartment",
+    "footprint": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            5.0,
+            5.0
+          ],
+          [
+            20.0,
+            5.0
+          ],
+          [
+            20.0,
+            25.0
+          ],
+          [
+            5.0,
+            25.0
+          ],
+          [
+            5.0,
+            5.0
+          ]
+        ]
+      ]
+    },
+    "z_min_m": 10.0,
+    "z_max_m": 13.0,
+    "area_sqm": 300.0,
+    "usage_type": "residential",
+    "status": "registered",
+    "model_object_name": "F03_apartment_301"
+  },
+  {
+    "unit_id": "UNIT-F03-302",
+    "vertical_id": "7A4B9C2D8E1F6G-F03-U302-R01",
+    "parent_ulpin": "7A4B9C2D8E1F6G",
+    "building_id": "BLD-GHA-001",
+    "level_code": "03",
+    "unit_type": "apartment",
+    "footprint": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            20.0,
+            5.0
+          ],
+          [
+            35.0,
+            5.0
+          ],
+          [
+            35.0,
+            25.0
+          ],
+          [
+            20.0,
+            25.0
+          ],
+          [
+            20.0,
+            5.0
+          ]
+        ]
+      ]
+    },
+    "z_min_m": 10.0,
+    "z_max_m": 13.0,
+    "area_sqm": 300.0,
+    "usage_type": "residential",
+    "status": "needs_review",
+    "model_object_name": "F03_apartment_302"
+  },
+  {
+    "unit_id": "UNIT-F04-401",
+    "vertical_id": "7A4B9C2D8E1F6G-F04-U401-R01",
+    "parent_ulpin": "7A4B9C2D8E1F6G",
+    "building_id": "BLD-GHA-001",
+    "level_code": "04",
+    "unit_type": "apartment",
+    "footprint": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            5.0,
+            5.0
+          ],
+          [
+            20.17,
+            5.0
+          ],
+          [
+            20.17,
+            25.0
+          ],
+          [
+            5.0,
+            25.0
+          ],
+          [
+            5.0,
+            5.0
+          ]
+        ]
+      ]
+    },
+    "z_min_m": 13.0,
+    "z_max_m": 16.0,
+    "area_sqm": 303.4,
+    "usage_type": "residential",
+    "status": "registered",
+    "model_object_name": "F04_apartment_401"
+  },
+  {
+    "unit_id": "UNIT-F04-402",
+    "vertical_id": "7A4B9C2D8E1F6G-F04-U402-R01",
+    "parent_ulpin": "7A4B9C2D8E1F6G",
+    "building_id": "BLD-GHA-001",
+    "level_code": "04",
+    "unit_type": "apartment",
+    "footprint": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            20.0,
+            5.0
+          ],
+          [
+            35.0,
+            5.0
+          ],
+          [
+            35.0,
+            25.0
+          ],
+          [
+            20.0,
+            25.0
+          ],
+          [
+            20.0,
+            5.0
+          ]
+        ]
+      ]
+    },
+    "z_min_m": 13.0,
+    "z_max_m": 16.0,
+    "area_sqm": 300.0,
+    "usage_type": "residential",
+    "status": "registered",
+    "model_object_name": "F04_apartment_402"
+  },
+  {
+    "unit_id": "UNIT-F05-501",
+    "vertical_id": "7A4B9C2D8E1F6G-F05-U501-R01",
+    "parent_ulpin": "7A4B9C2D8E1F6G",
+    "building_id": "BLD-GHA-001",
+    "level_code": "05",
+    "unit_type": "apartment",
+    "footprint": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            5.0,
+            5.0
+          ],
+          [
+            20.0,
+            5.0
+          ],
+          [
+            20.0,
+            25.0
+          ],
+          [
+            5.0,
+            25.0
+          ],
+          [
+            5.0,
+            5.0
+          ]
+        ]
+      ]
+    },
+    "z_min_m": 16.0,
+    "z_max_m": 19.0,
+    "area_sqm": 300.0,
+    "usage_type": "residential",
+    "status": "registered",
+    "model_object_name": "F05_apartment_501"
+  },
+  {
+    "unit_id": "UNIT-F05-502",
+    "vertical_id": "7A4B9C2D8E1F6G-F05-U502-R01",
+    "parent_ulpin": "7A4B9C2D8E1F6G",
+    "building_id": "BLD-GHA-001",
+    "level_code": "05",
+    "unit_type": "apartment",
+    "footprint": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            20.0,
+            5.0
+          ],
+          [
+            35.0,
+            5.0
+          ],
+          [
+            35.0,
+            25.0
+          ],
+          [
+            20.0,
+            25.0
+          ],
+          [
+            20.0,
+            5.0
+          ]
+        ]
+      ]
+    },
+    "z_min_m": 16.0,
+    "z_max_m": 19.0,
+    "area_sqm": 300.0,
+    "usage_type": "residential",
+    "status": "registered",
+    "model_object_name": "F05_apartment_502"
+  }
+]

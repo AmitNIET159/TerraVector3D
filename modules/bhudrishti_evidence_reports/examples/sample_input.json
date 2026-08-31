@@ -1,0 +1,261 @@
+{
+  "parent_ulpin": "7A4B9C2D8E1F6G",
+  "parcel": {
+    "parcel_id": "PCL-MH-PUNE-00472",
+    "area_sqm": 1250.0,
+    "boundary_coordinates": [
+      [0.0, 0.0], [50.0, 0.0], [50.0, 25.0], [0.0, 25.0], [0.0, 0.0]
+    ],
+    "land_use": "mixed_residential_commercial",
+    "survey_number": "SRV/2024/MH/04782"
+  },
+  "building": {
+    "building_id": "BLD-7A4B9C2D-001",
+    "building_name": "Shanti Heights Tower-A",
+    "footprint_coordinates": [
+      [5.0, 3.0], [45.0, 3.0], [45.0, 22.0], [5.0, 22.0], [5.0, 3.0]
+    ],
+    "height_m": 20.1,
+    "num_floors": 6,
+    "construction_year": 2022
+  },
+  "levels": [
+    {
+      "level_id": "LVL-B1", "level_number": -1, "height_m": 3.0,
+      "floor_area_sqm": 720.0, "level_type": "basement",
+      "z_min_m": -3.0, "z_max_m": 0.0
+    },
+    {
+      "level_id": "LVL-00", "level_number": 0, "height_m": 4.0,
+      "floor_area_sqm": 680.0, "level_type": "ground",
+      "z_min_m": 0.0, "z_max_m": 4.0
+    },
+    {
+      "level_id": "LVL-01", "level_number": 1, "height_m": 3.2,
+      "floor_area_sqm": 650.0, "level_type": "upper",
+      "z_min_m": 4.0, "z_max_m": 7.2
+    },
+    {
+      "level_id": "LVL-02", "level_number": 2, "height_m": 3.2,
+      "floor_area_sqm": 650.0, "level_type": "upper",
+      "z_min_m": 7.2, "z_max_m": 10.4
+    },
+    {
+      "level_id": "LVL-03", "level_number": 3, "height_m": 3.2,
+      "floor_area_sqm": 640.0, "level_type": "upper",
+      "z_min_m": 10.4, "z_max_m": 13.6
+    },
+    {
+      "level_id": "LVL-04", "level_number": 4, "height_m": 3.5,
+      "floor_area_sqm": 580.0, "level_type": "upper",
+      "z_min_m": 13.6, "z_max_m": 17.1
+    }
+  ],
+  "spatial_units": [
+    {
+      "vertical_id": "7A4B9C2D8E1F6G-FB1-UP24-R01",
+      "unit_id": "UP24", "level_id": "LVL-B1", "unit_type": "parking",
+      "area_sqm": 36.0, "volume_cbm": 108.0, "usage_type": "vehicle_parking",
+      "boundary_coordinates": [[6,4],[12,4],[12,10],[6,10],[6,4]],
+      "validation_status": "valid", "z_min_m": -3.0, "z_max_m": 0.0
+    },
+    {
+      "vertical_id": "7A4B9C2D8E1F6G-FB1-UUTIL01-R01",
+      "unit_id": "UUTIL01", "level_id": "LVL-B1", "unit_type": "utility",
+      "area_sqm": 28.5, "volume_cbm": 85.5, "usage_type": "electrical_room",
+      "boundary_coordinates": [[38,4],[44,4],[44,8.75],[38,8.75],[38,4]],
+      "validation_status": "valid", "z_min_m": -3.0, "z_max_m": 0.0
+    },
+    {
+      "vertical_id": "7A4B9C2D8E1F6G-F00-U001-R01",
+      "unit_id": "U001", "level_id": "LVL-00", "unit_type": "commercial",
+      "area_sqm": 120.0, "volume_cbm": 480.0, "usage_type": "retail_shop",
+      "boundary_coordinates": [[6,4],[26,4],[26,10],[6,10],[6,4]],
+      "validation_status": "conflict", "z_min_m": 0.0, "z_max_m": 4.0
+    },
+    {
+      "vertical_id": "7A4B9C2D8E1F6G-F01-U101-R01",
+      "unit_id": "U101", "level_id": "LVL-01", "unit_type": "residential",
+      "area_sqm": 95.0, "volume_cbm": 304.0, "usage_type": "dwelling",
+      "boundary_coordinates": [[6,4],[24,4],[24,14],[6,14],[6,4]],
+      "validation_status": "conflict", "z_min_m": 4.0, "z_max_m": 7.2
+    },
+    {
+      "vertical_id": "7A4B9C2D8E1F6G-F01-U102-R01",
+      "unit_id": "U102", "level_id": "LVL-01", "unit_type": "residential",
+      "area_sqm": 88.5, "volume_cbm": 283.2, "usage_type": "dwelling",
+      "boundary_coordinates": [[22,4],[44,4],[44,14],[22,14],[22,4]],
+      "validation_status": "conflict", "z_min_m": 4.0, "z_max_m": 7.2
+    },
+    {
+      "vertical_id": "7A4B9C2D8E1F6G-F02-U201-R01",
+      "unit_id": "U201", "level_id": "LVL-02", "unit_type": "residential",
+      "area_sqm": 130.0, "volume_cbm": 416.0, "usage_type": "dwelling",
+      "boundary_coordinates": [[6,4],[44,4],[44,14],[6,14],[6,4]],
+      "validation_status": "valid", "z_min_m": 7.2, "z_max_m": 10.4
+    },
+    {
+      "vertical_id": "7A4B9C2D8E1F6G-F03-U301-R01",
+      "unit_id": "U301", "level_id": "LVL-03", "unit_type": "residential",
+      "area_sqm": 125.0, "volume_cbm": 400.0, "usage_type": "dwelling",
+      "boundary_coordinates": [[6,4],[44,4],[44,14],[6,14],[6,4]],
+      "validation_status": "valid", "z_min_m": 10.4, "z_max_m": 13.6
+    },
+    {
+      "vertical_id": "7A4B9C2D8E1F6G-F04-U401-R01",
+      "unit_id": "U401", "level_id": "LVL-04", "unit_type": "residential",
+      "area_sqm": 160.0, "volume_cbm": 560.0, "usage_type": "penthouse",
+      "boundary_coordinates": [[6,4],[44,4],[44,21],[6,21],[6,4]],
+      "validation_status": "valid", "z_min_m": 13.6, "z_max_m": 17.1
+    }
+  ],
+  "property_rights": [
+    {
+      "right_id": "RGT-001",
+      "vertical_id": "7A4B9C2D8E1F6G-FB1-UP24-R01",
+      "rights_type": "ownership",
+      "holder_name_masked": "Pr**a De*****h",
+      "registration_date": "2023-04-15", "valid": true
+    },
+    {
+      "right_id": "RGT-002",
+      "vertical_id": "7A4B9C2D8E1F6G-FB1-UUTIL01-R01",
+      "rights_type": "common_area",
+      "holder_name_masked": "Sh***i He****s So****y",
+      "registration_date": "2022-11-01", "valid": true
+    },
+    {
+      "right_id": "RGT-003",
+      "vertical_id": "7A4B9C2D8E1F6G-F00-U001-R01",
+      "rights_type": "lease",
+      "holder_name_masked": "Am*t Ku*****i",
+      "registration_date": "2023-06-20", "valid": true
+    },
+    {
+      "right_id": "RGT-004",
+      "vertical_id": "7A4B9C2D8E1F6G-F01-U101-R01",
+      "rights_type": "ownership",
+      "holder_name_masked": "Sn**a Pa**l",
+      "registration_date": "2023-02-10", "valid": true
+    },
+    {
+      "right_id": "RGT-005",
+      "vertical_id": "7A4B9C2D8E1F6G-F01-U102-R01",
+      "rights_type": "ownership",
+      "holder_name_masked": "Ra***h Ku**r Sh***a",
+      "registration_date": "2023-03-22", "valid": true
+    },
+    {
+      "right_id": "RGT-006",
+      "vertical_id": "7A4B9C2D8E1F6G-F02-U201-R01",
+      "rights_type": "ownership",
+      "holder_name_masked": "Me**a Jo**i",
+      "registration_date": "2023-01-05", "valid": true
+    },
+    {
+      "right_id": "RGT-007",
+      "vertical_id": "7A4B9C2D8E1F6G-F03-U301-R01",
+      "rights_type": "mortgage",
+      "holder_name_masked": "Vi***m Si**h Th***r",
+      "registration_date": "2023-08-14", "valid": true
+    },
+    {
+      "right_id": "RGT-008",
+      "vertical_id": "7A4B9C2D8E1F6G-F04-U401-R01",
+      "rights_type": "ownership",
+      "holder_name_masked": "An***a Bh**t",
+      "registration_date": "2023-05-30", "valid": true
+    }
+  ],
+  "topology_conflicts": [
+    {
+      "conflict_id": "CONF-001",
+      "severity": "high",
+      "conflict_type": "boundary_overlap",
+      "conflicting_unit_ids": ["U101", "U102"],
+      "conflicting_vertical_ids": [
+        "7A4B9C2D8E1F6G-F01-U101-R01",
+        "7A4B9C2D8E1F6G-F01-U102-R01"
+      ],
+      "overlap_area_sqm": 12.8,
+      "overlap_volume_cbm": 40.96,
+      "overlapping_z_min_m": 4.0,
+      "overlapping_z_max_m": 7.2,
+      "estimated_overlap_volume_cum": 40.96,
+      "recommended_action": "Resurvey floor 1 boundary wall between units 101 and 102. Obtain updated BIM/CAD with corrected partition geometry.",
+      "explanation": "Units U101 and U102 on Floor 1 share an overlapping boundary strip of 12.8 m² along their common wall. This suggests the partition wall coordinates were recorded with conflicting offsets in the source BIM and cadastral survey datasets."
+    },
+    {
+      "conflict_id": "CONF-002",
+      "severity": "medium",
+      "conflict_type": "encroachment",
+      "conflicting_unit_ids": ["U001", "COMMON-GF"],
+      "conflicting_vertical_ids": [
+        "7A4B9C2D8E1F6G-F00-U001-R01"
+      ],
+      "overlap_area_sqm": 4.2,
+      "overlap_volume_cbm": 16.8,
+      "overlapping_z_min_m": 0.0,
+      "overlapping_z_max_m": 4.0,
+      "estimated_overlap_volume_cum": 16.8,
+      "recommended_action": "Verify ground-floor commercial unit boundary against approved building plan. Adjust common-area delineation if required.",
+      "explanation": "The ground-floor retail unit U001 extends 0.35 m into the designated common corridor area. This likely results from rounding in the original CAD extraction rather than an actual encroachment."
+    },
+    {
+      "conflict_id": "CONF-003",
+      "severity": "low",
+      "conflict_type": "area_discrepancy",
+      "conflicting_unit_ids": ["UUTIL01"],
+      "conflicting_vertical_ids": [
+        "7A4B9C2D8E1F6G-FB1-UUTIL01-R01"
+      ],
+      "overlap_area_sqm": 0.6,
+      "overlap_volume_cbm": null,
+      "recommended_action": "No immediate action required. Flag for next scheduled survey update.",
+      "explanation": "Minor area discrepancy of 0.6 m² detected in the basement utility room UUTIL01. Difference is within acceptable tolerance for non-habitable utility spaces but is flagged for completeness."
+    }
+  ],
+  "source_metadata": [
+    {
+      "source_id": "SRC-001",
+      "file_name": "shanti_heights_bim_model.ifc",
+      "source_type": "BIM_IFC",
+      "timestamp": "2024-11-15T10:30:00+05:30",
+      "confidence": 0.94,
+      "sha256_hash": "a3f1b2c4d5e6f7081920a1b2c3d4e5f6a7b8c9d0e1f20314a5b6c7d8e9f0a1b2"
+    },
+    {
+      "source_id": "SRC-002",
+      "file_name": "cadastral_survey_2024.dxf",
+      "source_type": "CAD_DXF",
+      "timestamp": "2024-10-28T14:15:00+05:30",
+      "confidence": 0.89,
+      "sha256_hash": "b4e2c3d5a6f70819a1b2c3d4e5f6a7b8c9d0e1f20314a5b6c7d8e9f0a1b2c3d4"
+    },
+    {
+      "source_id": "SRC-003",
+      "file_name": "drone_ortho_survey_20241105.tif",
+      "source_type": "drone_survey",
+      "timestamp": "2024-11-05T08:45:00+05:30",
+      "confidence": 0.91,
+      "sha256_hash": "c5f3d4e6b7a80920b2c3d4e5f6a7b8c9d0e1f20314a5b6c7d8e9f0a1b2c3d4e5"
+    },
+    {
+      "source_id": "SRC-004",
+      "file_name": "revenue_records_extract.json",
+      "source_type": "land_record_extract",
+      "timestamp": "2024-11-10T16:00:00+05:30",
+      "confidence": 0.86,
+      "sha256_hash": "d6a4e5f7c8b91031c3d4e5f6a7b8c9d0e1f20314a5b6c7d8e9f0a1b2c3d4e5f6"
+    }
+  ],
+  "confidence_scores": {
+    "overall": 0.87,
+    "geometric_accuracy": 0.92,
+    "topological_consistency": 0.81,
+    "semantic_completeness": 0.88,
+    "source_reliability": 0.90
+  },
+  "timestamp": "2024-11-20T12:00:00+05:30",
+  "generated_by": "BhuDrishti3D_Pipeline_v0.9.1"
+}

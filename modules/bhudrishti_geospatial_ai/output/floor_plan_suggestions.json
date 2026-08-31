@@ -1,0 +1,39 @@
+{
+  "parent_ulpin": "7A4B9C2D8E1F6G",
+  "coordinate_reference": "LOCAL_METERS",
+  "image_path": "input\\sample_floor_plan.png",
+  "metres_per_pixel": 0.05,
+  "proposed_units": [
+    {
+      "proposed_unit_code": "UNIT_004",
+      "proposed_boundary": [
+        [
+          18,
+          50
+        ],
+        [
+          20,
+          432
+        ],
+        [
+          622,
+          430
+        ],
+        [
+          620,
+          48
+        ]
+      ],
+      "area_px": 231928.0,
+      "area_sqm": 579.82,
+      "metric_area_available": true,
+      "confidence_score": 0.81,
+      "label_suggestion": "proposed_unit_candidate_4",
+      "warnings": [],
+      "human_verification_required": true
+    }
+  ],
+  "warnings": [],
+  "human_verification_required": true,
+  "disclaimer": "Detected boundaries are preliminary proposals from image processing. They are not legally valid apartment, flat, or property boundaries. All results require authorised human confirmation before use in any cadastral or ownership workflow."
+}

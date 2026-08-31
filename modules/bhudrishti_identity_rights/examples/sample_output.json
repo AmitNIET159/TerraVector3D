@@ -1,0 +1,173 @@
+{
+    "description": "Expected output for each sample_input.json entry (fictional data only).",
+    "note": "This is a PROTOTYPE extension. It does NOT replace or constitute an officially approved ULPIN format.",
+    "vertical_id_validation_results": [
+        {
+            "id": "7A4B9C2D8E1F6G-F04-U401-R01",
+            "is_valid": true,
+            "errors": [],
+            "warnings": [],
+            "human_readable_label": "Floor 4, Unit 401, Revision 01"
+        },
+        {
+            "id": "7A4B9C2D8E1F6G-FB1-UPARK24-R01",
+            "is_valid": true,
+            "errors": [],
+            "warnings": [],
+            "human_readable_label": "Basement 1, Unit PARK24, Revision 01"
+        },
+        {
+            "id": "7A4B9C2D8E1F6G-FG-USHOP01-R02",
+            "is_valid": true,
+            "errors": [],
+            "warnings": [],
+            "human_readable_label": "Ground Floor, Unit SHOP01, Revision 02"
+        },
+        {
+            "id": "7A4B9C2D8E1F6G-FB1-UUTIL01-R01",
+            "is_valid": true,
+            "errors": [],
+            "warnings": [],
+            "human_readable_label": "Basement 1, Unit UTIL01, Revision 01"
+        },
+        {
+            "id": "SHORT-F04-U401-R01",
+            "is_valid": false,
+            "errors": [
+                "parent_ulpin must be exactly 14 characters, got 5: 'SHORT'"
+            ],
+            "warnings": []
+        },
+        {
+            "id": "7a4b9c2d8e1f6g-F04-U401-R01",
+            "is_valid": false,
+            "errors": [
+                "parent_ulpin must contain only uppercase letters and digits: '7a4b9c2d8e1f6g'"
+            ],
+            "warnings": []
+        },
+        {
+            "id": "7A4B9C2D8E1F6G-F00-U401-R01",
+            "is_valid": false,
+            "errors": [
+                "Numeric level must be 01-99, not 00"
+            ],
+            "warnings": []
+        }
+    ],
+    "rights_record_validation_results": [
+        {
+            "description": "Valid ownership on apartment",
+            "vertical_id": "7A4B9C2D8E1F6G-F04-U401-R01",
+            "right_type": "ownership",
+            "holder_name_masked": "R***A",
+            "status": "valid",
+            "errors": [],
+            "audit_explanation": [
+                "PASS: Vertical ID '7A4B9C2D8E1F6G-F04-U401-R01' is well-formed.",
+                "PASS: Right type 'ownership' is recognized.",
+                "PASS: Holder name 'R***A' is properly masked.",
+                "PASS: start_date '2025-01-15' is valid."
+            ]
+        },
+        {
+            "description": "Valid parking_right on parking unit",
+            "vertical_id": "7A4B9C2D8E1F6G-FB1-UPARK24-R01",
+            "right_type": "parking_right",
+            "holder_name_masked": "S***H",
+            "status": "valid",
+            "errors": [],
+            "audit_explanation": [
+                "PASS: Vertical ID '7A4B9C2D8E1F6G-FB1-UPARK24-R01' is well-formed.",
+                "PASS: Right type 'parking_right' is recognized.",
+                "PASS: Holder name 'S***H' is properly masked.",
+                "PASS: start_date '2025-03-01' is valid.",
+                "PASS: parking_right is compatible with parking unit 'PARK24'."
+            ]
+        },
+        {
+            "description": "Invalid — parking_right on non-parking apartment unit",
+            "vertical_id": "7A4B9C2D8E1F6G-F04-U401-R01",
+            "right_type": "parking_right",
+            "holder_name_masked": "A***N",
+            "status": "invalid",
+            "errors": [
+                "parking_right is only valid for parking units (unit_code must contain 'PARK'). Got unit_code: '401'"
+            ],
+            "audit_explanation": [
+                "PASS: Vertical ID '7A4B9C2D8E1F6G-F04-U401-R01' is well-formed.",
+                "PASS: Right type 'parking_right' is recognized.",
+                "PASS: Holder name 'A***N' is properly masked.",
+                "PASS: start_date '2025-01-15' is valid.",
+                "FAIL: parking_right assigned to non-parking unit '401'. Unit code must contain 'PARK'."
+            ]
+        },
+        {
+            "description": "Valid utility_easement on utility unit",
+            "vertical_id": "7A4B9C2D8E1F6G-FB1-UUTIL01-R01",
+            "right_type": "utility_easement",
+            "holder_name_masked": "M***L",
+            "status": "valid",
+            "errors": [],
+            "audit_explanation": [
+                "PASS: Vertical ID '7A4B9C2D8E1F6G-FB1-UUTIL01-R01' is well-formed.",
+                "PASS: Right type 'utility_easement' is recognized.",
+                "PASS: Holder name 'M***L' is properly masked.",
+                "PASS: start_date '2025-06-01' is valid.",
+                "PASS: utility_easement is compatible with utility unit 'UTIL01'."
+            ]
+        },
+        {
+            "description": "Invalid — utility_easement on non-utility apartment unit",
+            "vertical_id": "7A4B9C2D8E1F6G-F04-U401-R01",
+            "right_type": "utility_easement",
+            "holder_name_masked": "M***L",
+            "status": "invalid",
+            "errors": [
+                "utility_easement is only valid for utility corridor units (unit_code must contain 'UTIL'). Got unit_code: '401'"
+            ],
+            "audit_explanation": [
+                "PASS: Vertical ID '7A4B9C2D8E1F6G-F04-U401-R01' is well-formed.",
+                "PASS: Right type 'utility_easement' is recognized.",
+                "PASS: Holder name 'M***L' is properly masked.",
+                "PASS: start_date '2025-06-01' is valid.",
+                "FAIL: utility_easement assigned to non-utility unit '401'. Unit code must contain 'UTIL'."
+            ]
+        },
+        {
+            "description": "Valid lease with end date",
+            "vertical_id": "7A4B9C2D8E1F6G-FG-USHOP01-R02",
+            "right_type": "lease",
+            "holder_name_masked": "T***I",
+            "status": "valid",
+            "errors": [],
+            "audit_explanation": [
+                "PASS: Vertical ID '7A4B9C2D8E1F6G-FG-USHOP01-R02' is well-formed.",
+                "PASS: Right type 'lease' is recognized.",
+                "PASS: Holder name 'T***I' is properly masked.",
+                "PASS: start_date '2025-02-01' is valid.",
+                "PASS: end_date '2030-02-01' is valid."
+            ]
+        },
+        {
+            "description": "Invalid — unmasked holder name",
+            "vertical_id": "7A4B9C2D8E1F6G-F04-U401-R01",
+            "right_type": "ownership",
+            "holder_name_masked": "Rajesh Kumar",
+            "status": "invalid",
+            "errors": [
+                "Holder name must be masked (contain '*'): got 'Rajesh Kumar'"
+            ]
+        },
+        {
+            "description": "Invalid — end_date before start_date",
+            "vertical_id": "7A4B9C2D8E1F6G-F04-U401-R01",
+            "right_type": "lease",
+            "holder_name_masked": "P***L",
+            "status": "invalid",
+            "errors": [
+                "end_date (2024-01-01) must be after start_date (2025-06-01)"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+  "parent_ulpin": "7A4B9C2D8E1F6G",
+  "footprint": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      40.0,
+      0.0
+    ],
+    [
+      40.0,
+      30.0
+    ],
+    [
+      25.0,
+      40.0
+    ],
+    [
+      0.0,
+      30.0
+    ],
+    [
+      0.0,
+      0.0
+    ]
+  ],
+  "area_sqm": 1400.0,
+  "bounding_box": {
+    "min_x": 0.0,
+    "min_y": 0.0,
+    "max_x": 40.0,
+    "max_y": 40.0
+  },
+  "coordinate_reference": "LOCAL_METERS",
+  "source_type": "geojson_local_prototype",
+  "confidence_score": 0.9,
+  "warnings": [],
+  "human_verification_required": true,
+  "disclaimer": "Input GeoJSON is used as a local prototype geometry source and is not an official cadastral coordinate record. All outputs require authorised human verification."
+}

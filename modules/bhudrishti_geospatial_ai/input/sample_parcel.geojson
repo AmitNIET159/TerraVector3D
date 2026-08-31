@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "parent_ulpin": "7A4B9C2D8E1F6G",
+        "name": "Fictional Demo Parcel",
+        "coordinate_reference": "LOCAL_METERS",
+        "disclaimer": "This is synthetic demo data, not a real land record."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [10.0, 10.0],
+            [50.0, 10.0],
+            [50.0, 40.0],
+            [35.0, 50.0],
+            [10.0, 40.0],
+            [10.0, 10.0]
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BhuDrishti 3D — Vertical Property Validation Report</title>
+  <style>
+    :root {
+      --primary: #1a3c5e; --primary-light: #2a5f8f;
+      --accent: #e8a838; --success: #198754; --warning: #fd7e14;
+      --danger: #dc3545; --muted: #6c757d; --bg: #ffffff;
+      --bg-light: #f8f9fa; --border: #dee2e6;
+      --text: #212529; --text-light: #495057;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg-light); color: var(--text); line-height: 1.6;
+    }
+    .container { max-width: 1000px; margin: 0 auto; background: var(--bg); box-shadow: 0 0 20px rgba(0,0,0,0.08); }
+
+    /* Header */
+    .report-header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: #fff; padding: 32px 40px; text-align: center;
+    }
+    .report-header h1 { font-size: 24px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 8px; }
+    .report-header .subtitle { font-size: 13px; opacity: 0.85; }
+    .report-header .meta { margin-top: 16px; font-size: 12px; opacity: 0.75; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+
+    .report-body { padding: 32px 40px; }
+    .section { margin-bottom: 32px; }
+    .section-title { font-size: 16px; font-weight: 700; color: var(--primary); border-bottom: 2px solid var(--accent); padding-bottom: 6px; margin-bottom: 16px; }
+
+    /* Summary Cards */
+    .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 8px; }
+    .summary-card { background: var(--bg-light); border: 1px solid var(--border); border-radius: 8px; padding: 16px; text-align: center; }
+    .summary-card .label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+    .summary-card .value { font-size: 22px; font-weight: 700; color: var(--primary); }
+    .summary-card .value.success { color: var(--success); }
+    .summary-card .value.danger { color: var(--danger); }
+
+    /* Confidence bar */
+    .confidence-bar-container { margin-top: 12px; }
+    .confidence-row { display: flex; align-items: center; margin-bottom: 6px; font-size: 12px; }
+    .confidence-label { width: 180px; color: var(--text-light); }
+    .confidence-bar-bg { flex: 1; height: 10px; background: var(--border); border-radius: 5px; overflow: hidden; margin: 0 10px; }
+    .confidence-bar-fill { height: 100%; border-radius: 5px; transition: width 0.4s; }
+    .confidence-pct { width: 45px; text-align: right; font-weight: 600; font-size: 12px; }
+
+    /* Tables */
+    table { width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 8px; }
+    thead th { background: var(--primary); color: #fff; padding: 10px 8px; text-align: left; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.3px; }
+    tbody td { padding: 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    tbody tr:nth-child(even) { background: var(--bg-light); }
+    tbody tr:hover { background: #e9ecef; }
+
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px; color: #fff; }
+    .badge-valid { background: var(--success); }
+    .badge-conflict { background: var(--danger); }
+    .badge-pending { background: var(--muted); }
+    .badge-high { background: var(--danger); }
+    .badge-medium { background: var(--warning); }
+    .badge-low { background: #ffc107; color: #212529; }
+
+    /* Conflict cards */
+    .conflict-card { border: 1px solid var(--border); border-radius: 8px; margin-bottom: 16px; overflow: hidden; }
+    .conflict-header { padding: 10px 16px; font-weight: 600; font-size: 13px; display: flex; align-items: center; gap: 10px; }
+    .conflict-header.high { background: #f8d7da; border-left: 4px solid var(--danger); }
+    .conflict-header.medium { background: #fff3cd; border-left: 4px solid var(--warning); }
+    .conflict-header.low { background: #fff9e6; border-left: 4px solid #ffc107; }
+    .conflict-body { padding: 12px 16px; }
+    .conflict-body dl { display: grid; grid-template-columns: 180px 1fr; gap: 4px 12px; font-size: 12px; }
+    .conflict-body dt { font-weight: 600; color: var(--text-light); }
+    .conflict-body dd { margin: 0; }
+
+    .hash-cell { font-family: 'Consolas', 'Courier New', monospace; font-size: 10px; word-break: break-all; }
+
+    /* QR section */
+    .qr-section { text-align: center; padding: 24px; background: var(--bg-light); border: 1px solid var(--border); border-radius: 8px; }
+    .qr-section img { width: 160px; height: 160px; margin: 12px 0; }
+    .qr-details { font-size: 11px; color: var(--text-light); margin-top: 8px; }
+    .qr-details code { font-family: 'Consolas', monospace; background: #e9ecef; padding: 1px 4px; border-radius: 3px; font-size: 10px; }
+
+    .disclaimer { margin-top: 32px; padding: 16px 24px; background: #fff3cd; border: 1px solid #ffc107; border-radius: 6px; font-size: 12px; color: #664d03; text-align: center; font-style: italic; }
+    .report-footer { background: var(--primary); color: rgba(255,255,255,0.6); text-align: center; padding: 16px; font-size: 10px; }
+
+    @media print {
+      body { background: #fff; }
+      .container { box-shadow: none; }
+      .report-header, thead th, .badge { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header class="report-header">
+    <h1>BhuDrishti 3D — Vertical Property Validation Report</h1>
+    <div class="subtitle">Evidence-Based Vertical Property Validation</div>
+    <div class="meta">
+      <span>Report ID: RPT-31BA0439ACCD</span>
+      <span>Generated: 2024-11-20T12:00:00+05:30</span>
+      <span>By: BhuDrishti3D_Pipeline_v0.9.1</span>
+    </div>
+  </header>
+
+  <div class="report-body">
+
+    <!-- 1. SUMMARY -->
+    <div class="section">
+      <h2 class="section-title">1. Summary</h2>
+      <div class="summary-grid">
+        <div class="summary-card">
+          <div class="label">Parent ULPIN</div>
+          <div class="value" style="font-size:15px;">7A4B9C2D8E1F6G</div>
+        </div>
+        <div class="summary-card">
+          <div class="label">Building</div>
+          <div class="value" style="font-size:15px;">Shanti Heights Tower-A</div>
+        </div>
+        <div class="summary-card">
+          <div class="label">Floors</div>
+          <div class="value">6</div>
+        </div>
+        <div class="summary-card">
+          <div class="label">Total Units</div>
+          <div class="value">8</div>
+        </div>
+        <div class="summary-card">
+          <div class="label">Valid Units</div>
+          <div class="value success">5</div>
+        </div>
+        <div class="summary-card">
+          <div class="label">Conflicts</div>
+          <div class="value danger">3</div>
+        </div>
+        <div class="summary-card">
+          <div class="label">Overall Confidence</div>
+          <div class="value">87.0%</div>
+        </div>
+      </div>
+      <div class="confidence-bar-container">
+        <div class="confidence-row">
+          <span class="confidence-label">Overall</span>
+          <div class="confidence-bar-bg">
+            <div class="confidence-bar-fill" style="width:87.0%; background:#198754;"></div>
+          </div>
+          <span class="confidence-pct">87.0%</span>
+        </div>
+        <div class="confidence-row">
+          <span class="confidence-label">Geometric Accuracy</span>
+          <div class="confidence-bar-bg">
+            <div class="confidence-bar-fill" style="width:92.0%; background:#198754;"></div>
+          </div>
+          <span class="confidence-pct">92.0%</span>
+        </div>
+        <div class="confidence-row">
+          <span class="confidence-label">Topological Consistency</span>
+          <div class="confidence-bar-bg">
+            <div class="confidence-bar-fill" style="width:81.0%; background:#fd7e14;"></div>
+          </div>
+          <span class="confidence-pct">81.0%</span>
+        </div>
+        <div class="confidence-row">
+          <span class="confidence-label">Semantic Completeness</span>
+          <div class="confidence-bar-bg">
+            <div class="confidence-bar-fill" style="width:88.0%; background:#198754;"></div>
+          </div>
+          <span class="confidence-pct">88.0%</span>
+        </div>
+        <div class="confidence-row">
+          <span class="confidence-label">Source Reliability</span>
+          <div class="confidence-bar-bg">
+            <div class="confidence-bar-fill" style="width:90.0%; background:#198754;"></div>
+          </div>
+          <span class="confidence-pct">90.0%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. VERTICAL-UNIT REGISTER -->
+    <div class="section">
+      <h2 class="section-title">2. Vertical-Unit Register</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Vertical ID</th><th>Level</th><th>Unit Type</th>
+            <th>Area (m²)</th><th>Usage</th><th>Rights</th>
+            <th>Holder</th><th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-family:monospace; font-size:10px;">7A4B9C2D8E1F6G-FB1-UP24-R01</td>
+            <td>LVL-B1</td>
+            <td>parking</td>
+            <td>36.0</td>
+            <td>vehicle_parking</td>
+            <td>ownership</td>
+            <td>Pr**a De*****h</td>
+            <td><span class="badge badge-valid">valid</span></td>
+          </tr>
+          <tr>
+            <td style="font-family:monospace; font-size:10px;">7A4B9C2D8E1F6G-FB1-UUTIL01-R01</td>
+            <td>LVL-B1</td>
+            <td>utility</td>
+            <td>28.5</td>
+            <td>electrical_room</td>
+            <td>common_area</td>
+            <td>Sh***i He****s So****y</td>
+            <td><span class="badge badge-valid">valid</span></td>
+          </tr>
+          <tr>
+            <td style="font-family:monospace; font-size:10px;">7A4B9C2D8E1F6G-F00-U001-R01</td>
+            <td>LVL-00</td>
+            <td>commercial</td>
+            <td>120.0</td>
+            <td>retail_shop</td>
+            <td>lease</td>
+            <td>Am*t Ku*****i</td>
+            <td><span class="badge badge-conflict">conflict</span></td>
+          </tr>
+          <tr>
+            <td style="font-family:monospace; font-size:10px;">7A4B9C2D8E1F6G-F01-U101-R01</td>
+            <td>LVL-01</td>
+            <td>residential</td>
+            <td>95.0</td>
+            <td>dwelling</td>
+            <td>ownership</td>
+            <td>Sn**a Pa**l</td>
+            <td><span class="badge badge-conflict">conflict</span></td>
+          </tr>
+          <tr>
+            <td style="font-family:monospace; font-size:10px;">7A4B9C2D8E1F6G-F01-U102-R01</td>
+            <td>LVL-01</td>
+            <td>residential</td>
+            <td>88.5</td>
+            <td>dwelling</td>
+            <td>ownership</td>
+            <td>Ra***h Ku**r Sh***a</td>
+            <td><span class="badge badge-conflict">conflict</span></td>
+          </tr>
+          <tr>
+            <td style="font-family:monospace; font-size:10px;">7A4B9C2D8E1F6G-F02-U201-R01</td>
+            <td>LVL-02</td>
+            <td>residential</td>
+            <td>130.0</td>
+            <td>dwelling</td>
+            <td>ownership</td>
+            <td>Me**a Jo**i</td>
+            <td><span class="badge badge-valid">valid</span></td>
+          </tr>
+          <tr>
+            <td style="font-family:monospace; font-size:10px;">7A4B9C2D8E1F6G-F03-U301-R01</td>
+            <td>LVL-03</td>
+            <td>residential</td>
+            <td>125.0</td>
+            <td>dwelling</td>
+            <td>mortgage</td>
+            <td>Vi***m Si**h Th***r</td>
+            <td><span class="badge badge-valid">valid</span></td>
+          </tr>
+          <tr>
+            <td style="font-family:monospace; font-size:10px;">7A4B9C2D8E1F6G-F04-U401-R01</td>
+            <td>LVL-04</td>
+            <td>residential</td>
+            <td>160.0</td>
+            <td>penthouse</td>
+            <td>ownership</td>
+            <td>An***a Bh**t</td>
+            <td><span class="badge badge-valid">valid</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3. TOPOLOGY CONFLICTS -->
+    <div class="section">
+      <h2 class="section-title">3. Topology Conflicts</h2>
+        <div class="conflict-card">
+          <div class="conflict-header high">
+            <span class="badge badge-high">high</span>
+            <span>CONF-001</span>
+            <span style="color:#6c757d; font-weight:normal; font-size:11px;">— boundary_overlap</span>
+          </div>
+          <div class="conflict-body">
+            <dl>
+              <dt>Conflict Type</dt>
+              <dd>boundary_overlap</dd>
+
+              <dt>Conflicting Unit IDs</dt>
+              <dd>U101, U102</dd>
+
+              <dt>Conflicting Vertical IDs</dt>
+              <dd style="font-family:monospace; font-size:10px;">7A4B9C2D8E1F6G-F01-U101-R01, 7A4B9C2D8E1F6G-F01-U102-R01</dd>
+
+              <dt>Overlap Area</dt>
+              <dd>12.80 m²</dd>
+
+              <dt>Overlap Volume</dt>
+              <dd>40.96 m³</dd>
+
+              <dt>Z Overlap Range</dt>
+              <dd>4.0 m – 7.2 m</dd>
+
+              <dt>Recommended Action</dt>
+              <dd>Resurvey floor 1 boundary wall between units 101 and 102. Obtain updated BIM/CAD with corrected partition geometry.</dd>
+
+              <dt>Explanation</dt>
+              <dd>Units U101 and U102 on Floor 1 share an overlapping boundary strip of 12.8 m² along their common wall. This suggests the partition wall coordinates were recorded with conflicting offsets in the source BIM and cadastral survey datasets.</dd>
+            </dl>
+          </div>
+        </div>
+        <div class="conflict-card">
+          <div class="conflict-header medium">
+            <span class="badge badge-medium">medium</span>
+            <span>CONF-002</span>
+            <span style="color:#6c757d; font-weight:normal; font-size:11px;">— encroachment</span>
+          </div>
+          <div class="conflict-body">
+            <dl>
+              <dt>Conflict Type</dt>
+              <dd>encroachment</dd>
+
+              <dt>Conflicting Unit IDs</dt>
+              <dd>U001, COMMON-GF</dd>
+
+              <dt>Conflicting Vertical IDs</dt>
+              <dd style="font-family:monospace; font-size:10px;">7A4B9C2D8E1F6G-F00-U001-R01</dd>
+
+              <dt>Overlap Area</dt>
+              <dd>4.20 m²</dd>
+
+              <dt>Overlap Volume</dt>
+              <dd>16.80 m³</dd>
+
+              <dt>Z Overlap Range</dt>
+              <dd>0.0 m – 4.0 m</dd>
+
+              <dt>Recommended Action</dt>
+              <dd>Verify ground-floor commercial unit boundary against approved building plan. Adjust common-area delineation if required.</dd>
+
+              <dt>Explanation</dt>
+              <dd>The ground-floor retail unit U001 extends 0.35 m into the designated common corridor area. This likely results from rounding in the original CAD extraction rather than an actual encroachment.</dd>
+            </dl>
+          </div>
+        </div>
+        <div class="conflict-card">
+          <div class="conflict-header low">
+            <span class="badge badge-low">low</span>
+            <span>CONF-003</span>
+            <span style="color:#6c757d; font-weight:normal; font-size:11px;">— area_discrepancy</span>
+          </div>
+          <div class="conflict-body">
+            <dl>
+              <dt>Conflict Type</dt>
+              <dd>area_discrepancy</dd>
+
+              <dt>Conflicting Unit IDs</dt>
+              <dd>UUTIL01</dd>
+
+              <dt>Conflicting Vertical IDs</dt>
+              <dd style="font-family:monospace; font-size:10px;">7A4B9C2D8E1F6G-FB1-UUTIL01-R01</dd>
+
+              <dt>Overlap Area</dt>
+              <dd>0.60 m²</dd>
+
+
+
+              <dt>Recommended Action</dt>
+              <dd>No immediate action required. Flag for next scheduled survey update.</dd>
+
+              <dt>Explanation</dt>
+              <dd>Minor area discrepancy of 0.6 m² detected in the basement utility room UUTIL01. Difference is within acceptable tolerance for non-habitable utility spaces but is flagged for completeness.</dd>
+            </dl>
+          </div>
+        </div>
+    </div>
+
+    <!-- 4. EVIDENCE SOURCES -->
+    <div class="section">
+      <h2 class="section-title">4. Evidence Sources</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Source File</th><th>Type</th><th>Timestamp</th>
+            <th>Confidence</th><th>SHA-256 Integrity Hash</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>shanti_heights_bim_model.ifc</td>
+            <td>BIM_IFC</td>
+            <td>2024-11-15T10:30:00+05:30</td>
+            <td>94%</td>
+            <td class="hash-cell">a3f1b2c4d5e6f7081920a1b2c3d4e5f6a7b8c9d0e1f20314a5b6c7d8e9f0a1b2</td>
+          </tr>
+          <tr>
+            <td>cadastral_survey_2024.dxf</td>
+            <td>CAD_DXF</td>
+            <td>2024-10-28T14:15:00+05:30</td>
+            <td>89%</td>
+            <td class="hash-cell">b4e2c3d5a6f70819a1b2c3d4e5f6a7b8c9d0e1f20314a5b6c7d8e9f0a1b2c3d4</td>
+          </tr>
+          <tr>
+            <td>drone_ortho_survey_20241105.tif</td>
+            <td>drone_survey</td>
+            <td>2024-11-05T08:45:00+05:30</td>
+            <td>91%</td>
+            <td class="hash-cell">c5f3d4e6b7a80920b2c3d4e5f6a7b8c9d0e1f20314a5b6c7d8e9f0a1b2c3d4e5</td>
+          </tr>
+          <tr>
+            <td>revenue_records_extract.json</td>
+            <td>land_record_extract</td>
+            <td>2024-11-10T16:00:00+05:30</td>
+            <td>86%</td>
+            <td class="hash-cell">d6a4e5f7c8b91031c3d4e5f6a7b8c9d0e1f20314a5b6c7d8e9f0a1b2c3d4e5f6</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 5. QR VERIFICATION -->
+    <div class="section">
+      <h2 class="section-title">5. QR Verification</h2>
+      <div class="qr-section">
+        <p style="font-size:13px; margin-bottom:4px;">Scan to verify report authenticity (local payload)</p>
+        <img src="data:image/png;base64,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" alt="QR Verification Code">
+        <div class="qr-details">
+          <p><strong>Report ID:</strong> <code>RPT-31BA0439ACCD</code></p>
+          <p><strong>ULPIN:</strong> <code>7A4B9C2D8E1F6G</code></p>
+          <p><strong>Input SHA-256:</strong> <code>197728d59d773cf6303e23b44c7a018863958854d439a9bf…</code></p>
+          <p><strong>Verification Type:</strong> <code>bhudrishti_3d_local</code></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      ⚠️ Prototype decision-support output. Final cadastral verification, ownership determination and legal record approval remain with the authorized land-record authority.
+    </div>
+
+  </div>
+
+  <footer class="report-footer">
+    BhuDrishti 3D — Vertical Property Validation System &middot; Report RPT-31BA0439ACCD
+  </footer>
+
+</div>
+</body>
+</html>

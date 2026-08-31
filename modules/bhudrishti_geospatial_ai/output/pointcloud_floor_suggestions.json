@@ -1,0 +1,217 @@
+{
+  "parent_ulpin": "7A4B9C2D8E1F6G",
+  "coordinate_reference": "LOCAL_METERS",
+  "method_used": [
+    "histogram",
+    "ransac"
+  ],
+  "methods_attempted": [
+    "histogram",
+    "ransac",
+    "dbscan"
+  ],
+  "methods_agreed": [
+    "ransac"
+  ],
+  "method_agreement_score": 0.5,
+  "detected_slab_elevations_m": [
+    -3.0,
+    0.01,
+    3.01,
+    6.0,
+    8.72,
+    12.0,
+    14.99,
+    18.0
+  ],
+  "estimated_floor_height_m": 3.0,
+  "roof_slab_z_m": 18.0,
+  "suggested_levels": [
+    {
+      "level_code": "B1",
+      "level_type": "basement",
+      "is_cadastral_unit_level": true,
+      "slab_z_m": -3.0,
+      "z_min_m": -3.0,
+      "z_max_m": 0.01,
+      "point_count": 3467,
+      "confidence_score": 0.85,
+      "warnings": [],
+      "human_verification_required": true
+    },
+    {
+      "level_code": "G",
+      "level_type": "ground",
+      "is_cadastral_unit_level": true,
+      "slab_z_m": 0.01,
+      "z_min_m": 0.01,
+      "z_max_m": 3.01,
+      "point_count": 2682,
+      "confidence_score": 0.85,
+      "warnings": [],
+      "human_verification_required": true
+    },
+    {
+      "level_code": "F01",
+      "level_type": "floor",
+      "is_cadastral_unit_level": true,
+      "slab_z_m": 3.01,
+      "z_min_m": 3.01,
+      "z_max_m": 6.0,
+      "point_count": 2666,
+      "confidence_score": 0.85,
+      "warnings": [],
+      "human_verification_required": true
+    },
+    {
+      "level_code": "F02",
+      "level_type": "floor",
+      "is_cadastral_unit_level": true,
+      "slab_z_m": 6.0,
+      "z_min_m": 6.0,
+      "z_max_m": 8.72,
+      "point_count": 1373,
+      "confidence_score": 0.85,
+      "warnings": [],
+      "human_verification_required": true
+    },
+    {
+      "level_code": "F03",
+      "level_type": "floor",
+      "is_cadastral_unit_level": true,
+      "slab_z_m": 8.72,
+      "z_min_m": 8.72,
+      "z_max_m": 12.0,
+      "point_count": 3892,
+      "confidence_score": 0.85,
+      "warnings": [],
+      "human_verification_required": true
+    },
+    {
+      "level_code": "F04",
+      "level_type": "floor",
+      "is_cadastral_unit_level": true,
+      "slab_z_m": 12.0,
+      "z_min_m": 12.0,
+      "z_max_m": 14.99,
+      "point_count": 2623,
+      "confidence_score": 0.85,
+      "warnings": [],
+      "human_verification_required": true
+    },
+    {
+      "level_code": "F05",
+      "level_type": "floor",
+      "is_cadastral_unit_level": true,
+      "slab_z_m": 14.99,
+      "z_min_m": 14.99,
+      "z_max_m": 18.0,
+      "point_count": 3267,
+      "confidence_score": 0.85,
+      "warnings": [],
+      "human_verification_required": true
+    },
+    {
+      "level_code": "ROOF",
+      "level_type": "roof_slab",
+      "is_cadastral_unit_level": false,
+      "slab_z_m": 18.0,
+      "z_min_m": 18.0,
+      "z_max_m": 18.0,
+      "point_count": 1263,
+      "confidence_score": 0.85,
+      "warnings": [],
+      "human_verification_required": true
+    }
+  ],
+  "suggested_cadastral_levels": [
+    {
+      "level_code": "B1",
+      "level_type": "basement",
+      "is_cadastral_unit_level": true,
+      "slab_z_m": -3.0,
+      "z_min_m": -3.0,
+      "z_max_m": 0.01,
+      "point_count": 3467,
+      "confidence_score": 0.85,
+      "warnings": [],
+      "human_verification_required": true
+    },
+    {
+      "level_code": "G",
+      "level_type": "ground",
+      "is_cadastral_unit_level": true,
+      "slab_z_m": 0.01,
+      "z_min_m": 0.01,
+      "z_max_m": 3.01,
+      "point_count": 2682,
+      "confidence_score": 0.85,
+      "warnings": [],
+      "human_verification_required": true
+    },
+    {
+      "level_code": "F01",
+      "level_type": "floor",
+      "is_cadastral_unit_level": true,
+      "slab_z_m": 3.01,
+      "z_min_m": 3.01,
+      "z_max_m": 6.0,
+      "point_count": 2666,
+      "confidence_score": 0.85,
+      "warnings": [],
+      "human_verification_required": true
+    },
+    {
+      "level_code": "F02",
+      "level_type": "floor",
+      "is_cadastral_unit_level": true,
+      "slab_z_m": 6.0,
+      "z_min_m": 6.0,
+      "z_max_m": 8.72,
+      "point_count": 1373,
+      "confidence_score": 0.85,
+      "warnings": [],
+      "human_verification_required": true
+    },
+    {
+      "level_code": "F03",
+      "level_type": "floor",
+      "is_cadastral_unit_level": true,
+      "slab_z_m": 8.72,
+      "z_min_m": 8.72,
+      "z_max_m": 12.0,
+      "point_count": 3892,
+      "confidence_score": 0.85,
+      "warnings": [],
+      "human_verification_required": true
+    },
+    {
+      "level_code": "F04",
+      "level_type": "floor",
+      "is_cadastral_unit_level": true,
+      "slab_z_m": 12.0,
+      "z_min_m": 12.0,
+      "z_max_m": 14.99,
+      "point_count": 2623,
+      "confidence_score": 0.85,
+      "warnings": [],
+      "human_verification_required": true
+    },
+    {
+      "level_code": "F05",
+      "level_type": "floor",
+      "is_cadastral_unit_level": true,
+      "slab_z_m": 14.99,
+      "z_min_m": 14.99,
+      "z_max_m": 18.0,
+      "point_count": 3267,
+      "confidence_score": 0.85,
+      "warnings": [],
+      "human_verification_required": true
+    }
+  ],
+  "warnings": [
+    "Floor-detection methods disagree; manual validation required."
+  ],
+  "human_verification_required": true
+}

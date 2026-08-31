@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <style>
+    :root {
+      --primary: #1a3c5e; --primary-light: #2a5f8f;
+      --accent: #e8a838; --success: #198754; --warning: #fd7e14;
+      --danger: #dc3545; --muted: #6c757d; --bg: #ffffff;
+      --bg-light: #f8f9fa; --border: #dee2e6;
+      --text: #212529; --text-light: #495057;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg-light); color: var(--text); line-height: 1.6;
+    }
+    .container { max-width: 1000px; margin: 0 auto; background: var(--bg); box-shadow: 0 0 20px rgba(0,0,0,0.08); }
+
+    /* Header */
+    .report-header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: #fff; padding: 32px 40px; text-align: center;
+    }
+    .report-header h1 { font-size: 24px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 8px; }
+    .report-header .subtitle { font-size: 13px; opacity: 0.85; }
+    .report-header .meta { margin-top: 16px; font-size: 12px; opacity: 0.75; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+
+    .report-body { padding: 32px 40px; }
+    .section { margin-bottom: 32px; }
+    .section-title { font-size: 16px; font-weight: 700; color: var(--primary); border-bottom: 2px solid var(--accent); padding-bottom: 6px; margin-bottom: 16px; }
+
+    /* Summary Cards */
+    .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 8px; }
+    .summary-card { background: var(--bg-light); border: 1px solid var(--border); border-radius: 8px; padding: 16px; text-align: center; }
+    .summary-card .label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+    .summary-card .value { font-size: 22px; font-weight: 700; color: var(--primary); }
+    .summary-card .value.success { color: var(--success); }
+    .summary-card .value.danger { color: var(--danger); }
+
+    /* Confidence bar */
+    .confidence-bar-container { margin-top: 12px; }
+    .confidence-row { display: flex; align-items: center; margin-bottom: 6px; font-size: 12px; }
+    .confidence-label { width: 180px; color: var(--text-light); }
+    .confidence-bar-bg { flex: 1; height: 10px; background: var(--border); border-radius: 5px; overflow: hidden; margin: 0 10px; }
+    .confidence-bar-fill { height: 100%; border-radius: 5px; transition: width 0.4s; }
+    .confidence-pct { width: 45px; text-align: right; font-weight: 600; font-size: 12px; }
+
+    /* Tables */
+    table { width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 8px; }
+    thead th { background: var(--primary); color: #fff; padding: 10px 8px; text-align: left; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.3px; }
+    tbody td { padding: 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    tbody tr:nth-child(even) { background: var(--bg-light); }
+    tbody tr:hover { background: #e9ecef; }
+
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px; color: #fff; }
+    .badge-valid { background: var(--success); }
+    .badge-conflict { background: var(--danger); }
+    .badge-pending { background: var(--muted); }
+    .badge-high { background: var(--danger); }
+    .badge-medium { background: var(--warning); }
+    .badge-low { background: #ffc107; color: #212529; }
+
+    /* Conflict cards */
+    .conflict-card { border: 1px solid var(--border); border-radius: 8px; margin-bottom: 16px; overflow: hidden; }
+    .conflict-header { padding: 10px 16px; font-weight: 600; font-size: 13px; display: flex; align-items: center; gap: 10px; }
+    .conflict-header.high { background: #f8d7da; border-left: 4px solid var(--danger); }
+    .conflict-header.medium { background: #fff3cd; border-left: 4px solid var(--warning); }
+    .conflict-header.low { background: #fff9e6; border-left: 4px solid #ffc107; }
+    .conflict-body { padding: 12px 16px; }
+    .conflict-body dl { display: grid; grid-template-columns: 180px 1fr; gap: 4px 12px; font-size: 12px; }
+    .conflict-body dt { font-weight: 600; color: var(--text-light); }
+    .conflict-body dd { margin: 0; }
+
+    .hash-cell { font-family: 'Consolas', 'Courier New', monospace; font-size: 10px; word-break: break-all; }
+
+    /* QR section */
+    .qr-section { text-align: center; padding: 24px; background: var(--bg-light); border: 1px solid var(--border); border-radius: 8px; }
+    .qr-section img { width: 160px; height: 160px; margin: 12px 0; }
+    .qr-details { font-size: 11px; color: var(--text-light); margin-top: 8px; }
+    .qr-details code { font-family: 'Consolas', monospace; background: #e9ecef; padding: 1px 4px; border-radius: 3px; font-size: 10px; }
+
+    .disclaimer { margin-top: 32px; padding: 16px 24px; background: #fff3cd; border: 1px solid #ffc107; border-radius: 6px; font-size: 12px; color: #664d03; text-align: center; font-style: italic; }
+    .report-footer { background: var(--primary); color: rgba(255,255,255,0.6); text-align: center; padding: 16px; font-size: 10px; }
+
+    @media print {
+      body { background: #fff; }
+      .container { box-shadow: none; }
+      .report-header, thead th, .badge { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header class="report-header">
+    <h1>{{ title }}</h1>
+    <div class="subtitle">Evidence-Based Vertical Property Validation</div>
+    <div class="meta">
+      <span>Report ID: {{ report_id }}</span>
+      <span>Generated: {{ timestamp }}</span>
+      <span>By: {{ generated_by }}</span>
+    </div>
+  </header>
+
+  <div class="report-body">
+
+    <!-- 1. SUMMARY -->
+    <div class="section">
+      <h2 class="section-title">1. Summary</h2>
+      <div class="summary-grid">
+        <div class="summary-card">
+          <div class="label">Parent ULPIN</div>
+          <div class="value" style="font-size:15px;">{{ parent_ulpin }}</div>
+        </div>
+        <div class="summary-card">
+          <div class="label">Building</div>
+          <div class="value" style="font-size:15px;">{{ building_name }}</div>
+        </div>
+        <div class="summary-card">
+          <div class="label">Floors</div>
+          <div class="value">{{ num_floors }}</div>
+        </div>
+        <div class="summary-card">
+          <div class="label">Total Units</div>
+          <div class="value">{{ num_units }}</div>
+        </div>
+        <div class="summary-card">
+          <div class="label">Valid Units</div>
+          <div class="value success">{{ num_valid_units }}</div>
+        </div>
+        <div class="summary-card">
+          <div class="label">Conflicts</div>
+          <div class="value {% if num_conflicts > 0 %}danger{% else %}success{% endif %}">{{ num_conflicts }}</div>
+        </div>
+        <div class="summary-card">
+          <div class="label">Overall Confidence</div>
+          <div class="value">{{ "%.1f"|format(overall_confidence * 100) }}%</div>
+        </div>
+      </div>
+      <div class="confidence-bar-container">
+        {% for key, score in confidence_scores.items() %}
+        {% set pct = (score * 100)|round(1) %}
+        {% set bar_color = '#198754' if pct >= 85 else '#fd7e14' if pct >= 70 else '#dc3545' %}
+        <div class="confidence-row">
+          <span class="confidence-label">{{ key.replace('_', ' ').title() }}</span>
+          <div class="confidence-bar-bg">
+            <div class="confidence-bar-fill" style="width:{{ pct }}%; background:{{ bar_color }};"></div>
+          </div>
+          <span class="confidence-pct">{{ pct }}%</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- 2. VERTICAL-UNIT REGISTER -->
+    <div class="section">
+      <h2 class="section-title">2. Vertical-Unit Register</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Vertical ID</th><th>Level</th><th>Unit Type</th>
+            <th>Area (m²)</th><th>Usage</th><th>Rights</th>
+            <th>Holder</th><th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for u in unit_register %}
+          <tr>
+            <td style="font-family:monospace; font-size:10px;">{{ u.vertical_id }}</td>
+            <td>{{ u.level_id }}</td>
+            <td>{{ u.unit_type }}</td>
+            <td>{{ "%.1f"|format(u.area_sqm) }}</td>
+            <td>{{ u.usage_type }}</td>
+            <td>{{ u.rights_type }}</td>
+            <td>{{ u.masked_holder }}</td>
+            <td><span class="badge badge-{{ u.validation_status }}">{{ u.validation_status }}</span></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3. TOPOLOGY CONFLICTS -->
+    <div class="section">
+      <h2 class="section-title">3. Topology Conflicts</h2>
+      {% if conflicts %}
+        {% for c in conflicts %}
+        <div class="conflict-card">
+          <div class="conflict-header {{ c.severity }}">
+            <span class="badge badge-{{ c.severity }}">{{ c.severity }}</span>
+            <span>{{ c.conflict_id }}</span>
+            {% if c.conflict_type %}
+            <span style="color:#6c757d; font-weight:normal; font-size:11px;">— {{ c.conflict_type }}</span>
+            {% endif %}
+          </div>
+          <div class="conflict-body">
+            <dl>
+              {% if c.conflict_type %}
+              <dt>Conflict Type</dt>
+              <dd>{{ c.conflict_type }}</dd>
+              {% endif %}
+
+              <dt>Conflicting Unit IDs</dt>
+              <dd>{{ c.conflicting_unit_ids | join(', ') }}</dd>
+
+              <dt>Conflicting Vertical IDs</dt>
+              <dd style="font-family:monospace; font-size:10px;">{{ c.conflicting_vertical_ids | join(', ') }}</dd>
+
+              <dt>Overlap Area</dt>
+              <dd>{{ "%.2f"|format(c.overlap_area_sqm) }} m²</dd>
+
+              {% if c.overlap_volume_cbm is not none %}
+              <dt>Overlap Volume</dt>
+              <dd>{{ "%.2f"|format(c.overlap_volume_cbm) }} m³</dd>
+              {% endif %}
+
+              {% if c.overlapping_z_min_m is not none and c.overlapping_z_max_m is not none %}
+              <dt>Z Overlap Range</dt>
+              <dd>{{ "%.1f"|format(c.overlapping_z_min_m) }} m – {{ "%.1f"|format(c.overlapping_z_max_m) }} m</dd>
+              {% endif %}
+
+              <dt>Recommended Action</dt>
+              <dd>{{ c.recommended_action }}</dd>
+
+              <dt>Explanation</dt>
+              <dd>{{ c.explanation }}</dd>
+            </dl>
+          </div>
+        </div>
+        {% endfor %}
+      {% else %}
+        <p style="color:var(--success); font-weight:600;">✓ No topology conflicts detected.</p>
+      {% endif %}
+    </div>
+
+    <!-- 4. EVIDENCE SOURCES -->
+    <div class="section">
+      <h2 class="section-title">4. Evidence Sources</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Source File</th><th>Type</th><th>Timestamp</th>
+            <th>Confidence</th><th>SHA-256 Integrity Hash</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for s in evidence_sources %}
+          <tr>
+            <td>{{ s.file_name }}</td>
+            <td>{{ s.source_type }}</td>
+            <td>{{ s.timestamp }}</td>
+            <td>{{ "%.0f"|format(s.confidence * 100) }}%</td>
+            <td class="hash-cell">{{ s.sha256_hash }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 5. QR VERIFICATION -->
+    <div class="section">
+      <h2 class="section-title">5. QR Verification</h2>
+      <div class="qr-section">
+        <p style="font-size:13px; margin-bottom:4px;">Scan to verify report authenticity (local payload)</p>
+        <img src="data:image/png;base64,{{ qr_base64 }}" alt="QR Verification Code">
+        <div class="qr-details">
+          <p><strong>Report ID:</strong> <code>{{ qr_payload.report_id }}</code></p>
+          <p><strong>ULPIN:</strong> <code>{{ qr_payload.parent_ulpin }}</code></p>
+          <p><strong>Input SHA-256:</strong> <code>{{ input_hash[:48] }}…</code></p>
+          <p><strong>Verification Type:</strong> <code>{{ qr_payload.verification_type }}</code></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      ⚠️ {{ disclaimer }}
+    </div>
+
+  </div>
+
+  <footer class="report-footer">
+    BhuDrishti 3D — Vertical Property Validation System &middot; Report {{ report_id }}
+  </footer>
+
+</div>
+</body>
+</html>

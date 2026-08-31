@@ -1,0 +1,46 @@
+[
+  {
+    "conflict_id": "CONFLICT-001",
+    "conflict_type": "spatial_overlap",
+    "description": "Units U401 and U402 on level F04 have overlapping footprints.  U401 extends 0.17 m past the partition midline, creating an overlap strip of approximately 3.4 sq.m.",
+    "affected_unit_ids": [
+      "UNIT-F04-401",
+      "UNIT-F04-402"
+    ],
+    "affected_vertical_ids": [
+      "7A4B9C2D8E1F6G-F04-U401-R01",
+      "7A4B9C2D8E1F6G-F04-U402-R01"
+    ],
+    "overlap_area_sqm": 3.4,
+    "severity": "medium",
+    "recommended_action": "Initiate re-survey of floor 4 partition wall and update cadastral records accordingly."
+  },
+  {
+    "conflict_id": "CONFLICT-002",
+    "conflict_type": "infrastructure_passthrough",
+    "description": "An underground utility corridor (UTIL01) passes through basement level B1, crossing beneath the parking area.  Easement documentation must be verified.",
+    "affected_unit_ids": [
+      "UNIT-B1-UTIL01"
+    ],
+    "affected_vertical_ids": [
+      "7A4B9C2D8E1F6G-FB1-UUTIL01-R01"
+    ],
+    "overlap_area_sqm": null,
+    "severity": "low",
+    "recommended_action": "Verify utility easement registration and cross-check with municipal services department records."
+  },
+  {
+    "conflict_id": "CONFLICT-003",
+    "conflict_type": "status_review",
+    "description": "Unit U302 on level F03 is flagged as needs_review due to pending ownership documentation.",
+    "affected_unit_ids": [
+      "UNIT-F03-302"
+    ],
+    "affected_vertical_ids": [
+      "7A4B9C2D8E1F6G-F03-U302-R01"
+    ],
+    "overlap_area_sqm": null,
+    "severity": "medium",
+    "recommended_action": "Request updated ownership documents from the current holder and schedule a verification hearing."
+  }
+]

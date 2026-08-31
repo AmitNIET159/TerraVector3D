@@ -1,0 +1,49 @@
+{
+  "overall_score": 0.802,
+  "confidence_level": "medium",
+  "factor_breakdown": [
+    {
+      "factor": "source_quality",
+      "weight": 0.25,
+      "score": 0.9,
+      "status": "available"
+    },
+    {
+      "factor": "image_quality",
+      "weight": 0.2,
+      "score": 0.81,
+      "status": "available"
+    },
+    {
+      "factor": "pointcloud_density",
+      "weight": 0.25,
+      "score": 0.85,
+      "status": "available"
+    },
+    {
+      "factor": "model_certainty",
+      "weight": 0.15,
+      "score": 0.85,
+      "status": "available"
+    },
+    {
+      "factor": "validation_result",
+      "weight": 0.15,
+      "score": 0.5,
+      "status": "available"
+    }
+  ],
+  "available_sources": [
+    "source_quality",
+    "image_quality",
+    "pointcloud_density",
+    "model_certainty",
+    "validation_result"
+  ],
+  "missing_sources": [],
+  "explanation": "Floor-detection methods disagree (agreement_score=0.50). Confidence capped at 'medium'. Manual floor-layout validation is required. Medium confidence: human review is strongly recommended before acting on these results.",
+  "warnings": [
+    "Floor-detection methods disagree; manual validation required."
+  ],
+  "human_verification_required": true
+}

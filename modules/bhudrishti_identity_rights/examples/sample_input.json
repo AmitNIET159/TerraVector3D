@@ -1,0 +1,108 @@
+{
+    "description": "Sample input data for bhudrishti_identity_rights module (fictional data only).",
+    "note": "This is a PROTOTYPE extension. It does NOT replace or constitute an officially approved ULPIN format.",
+    "vertical_ids_to_validate": [
+        {
+            "description": "Valid floor 4 apartment",
+            "id": "7A4B9C2D8E1F6G-F04-U401-R01"
+        },
+        {
+            "description": "Valid basement parking unit",
+            "id": "7A4B9C2D8E1F6G-FB1-UPARK24-R01"
+        },
+        {
+            "description": "Valid ground floor shop",
+            "id": "7A4B9C2D8E1F6G-FG-USHOP01-R02"
+        },
+        {
+            "description": "Valid basement utility corridor",
+            "id": "7A4B9C2D8E1F6G-FB1-UUTIL01-R01"
+        },
+        {
+            "description": "Invalid — ULPIN too short",
+            "id": "SHORT-F04-U401-R01"
+        },
+        {
+            "description": "Invalid — lowercase ULPIN",
+            "id": "7a4b9c2d8e1f6g-F04-U401-R01"
+        },
+        {
+            "description": "Invalid — level 00",
+            "id": "7A4B9C2D8E1F6G-F00-U401-R01"
+        }
+    ],
+    "rights_records": [
+        {
+            "description": "Valid ownership on apartment",
+            "vertical_id": "7A4B9C2D8E1F6G-F04-U401-R01",
+            "right_type": "ownership",
+            "holder_name_masked": "R***A",
+            "start_date": "2025-01-15",
+            "end_date": null,
+            "notes": "Fictional ownership record for floor 4 apartment"
+        },
+        {
+            "description": "Valid parking_right on parking unit",
+            "vertical_id": "7A4B9C2D8E1F6G-FB1-UPARK24-R01",
+            "right_type": "parking_right",
+            "holder_name_masked": "S***H",
+            "start_date": "2025-03-01",
+            "end_date": null,
+            "notes": "Basement parking slot"
+        },
+        {
+            "description": "Invalid — parking_right on non-parking apartment unit",
+            "vertical_id": "7A4B9C2D8E1F6G-F04-U401-R01",
+            "right_type": "parking_right",
+            "holder_name_masked": "A***N",
+            "start_date": "2025-01-15",
+            "end_date": null,
+            "notes": "Should fail — apartment unit does not contain PARK"
+        },
+        {
+            "description": "Valid utility_easement on utility unit",
+            "vertical_id": "7A4B9C2D8E1F6G-FB1-UUTIL01-R01",
+            "right_type": "utility_easement",
+            "holder_name_masked": "M***L",
+            "start_date": "2025-06-01",
+            "end_date": null,
+            "notes": "Utility corridor easement"
+        },
+        {
+            "description": "Invalid — utility_easement on non-utility apartment unit",
+            "vertical_id": "7A4B9C2D8E1F6G-F04-U401-R01",
+            "right_type": "utility_easement",
+            "holder_name_masked": "M***L",
+            "start_date": "2025-06-01",
+            "end_date": null,
+            "notes": "Should fail — apartment unit does not contain UTIL"
+        },
+        {
+            "description": "Valid lease with end date",
+            "vertical_id": "7A4B9C2D8E1F6G-FG-USHOP01-R02",
+            "right_type": "lease",
+            "holder_name_masked": "T***I",
+            "start_date": "2025-02-01",
+            "end_date": "2030-02-01",
+            "notes": "Five-year shop lease"
+        },
+        {
+            "description": "Invalid — unmasked holder name",
+            "vertical_id": "7A4B9C2D8E1F6G-F04-U401-R01",
+            "right_type": "ownership",
+            "holder_name_masked": "Rajesh Kumar",
+            "start_date": "2025-01-15",
+            "end_date": null,
+            "notes": "Should fail — holder name is not masked"
+        },
+        {
+            "description": "Invalid — end_date before start_date",
+            "vertical_id": "7A4B9C2D8E1F6G-F04-U401-R01",
+            "right_type": "lease",
+            "holder_name_masked": "P***L",
+            "start_date": "2025-06-01",
+            "end_date": "2024-01-01",
+            "notes": "Should fail — end_date precedes start_date"
+        }
+    ]
+}

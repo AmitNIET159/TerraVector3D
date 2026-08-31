@@ -1,0 +1,41 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "parent_ulpin": "7A4B9C2D8E1F6G",
+        "parcel_id": "PRC-DW-001",
+        "address": "Plot 42, Demo Ward, Pune (Fictional)",
+        "total_area_sqm": 1200.0
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              40.0,
+              0.0
+            ],
+            [
+              40.0,
+              30.0
+            ],
+            [
+              0.0,
+              30.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

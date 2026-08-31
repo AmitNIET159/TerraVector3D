@@ -1,0 +1,10 @@
+{
+  "source_id": "SRC-DEMO-001",
+  "source_type": "demo_floor_plan",
+  "description": "Fictional floor-plan data generated programmatically for the BhuDrishti 3D SIH demonstration.  No real land records, property owners, or geographic locations are represented.",
+  "confidence_score": 0.92,
+  "coordinate_system": "local_cartesian_metres",
+  "unit_of_measure": "metres",
+  "generation_timestamp": "2026-08-30T16:24:43.001809+00:00",
+  "data_disclaimer": "ALL DATA IS FICTIONAL.  This dataset was created solely for hackathon / demo purposes and must not be used for any legal, financial, or administrative decision-making."
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "level_code": "B1",
+    "building_id": "BLD-GHA-001",
+    "level_type": "basement",
+    "z_min_m": -3.0,
+    "z_max_m": 0.0,
+    "elevation_label": "Basement 1"
+  },
+  {
+    "level_code": "G",
+    "building_id": "BLD-GHA-001",
+    "level_type": "ground",
+    "z_min_m": 0.0,
+    "z_max_m": 4.0,
+    "elevation_label": "Ground Floor"
+  },
+  {
+    "level_code": "01",
+    "building_id": "BLD-GHA-001",
+    "level_type": "residential",
+    "z_min_m": 4.0,
+    "z_max_m": 7.0,
+    "elevation_label": "Floor 1"
+  },
+  {
+    "level_code": "02",
+    "building_id": "BLD-GHA-001",
+    "level_type": "residential",
+    "z_min_m": 7.0,
+    "z_max_m": 10.0,
+    "elevation_label": "Floor 2"
+  },
+  {
+    "level_code": "03",
+    "building_id": "BLD-GHA-001",
+    "level_type": "residential",
+    "z_min_m": 10.0,
+    "z_max_m": 13.0,
+    "elevation_label": "Floor 3"
+  },
+  {
+    "level_code": "04",
+    "building_id": "BLD-GHA-001",
+    "level_type": "residential",
+    "z_min_m": 13.0,
+    "z_max_m": 16.0,
+    "elevation_label": "Floor 4"
+  },
+  {
+    "level_code": "05",
+    "building_id": "BLD-GHA-001",
+    "level_type": "residential",
+    "z_min_m": 16.0,
+    "z_max_m": 19.0,
+    "elevation_label": "Floor 5"
+  }
+]

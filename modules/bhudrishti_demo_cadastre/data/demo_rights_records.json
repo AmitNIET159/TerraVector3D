@@ -1,0 +1,132 @@
+[
+  {
+    "right_id": "RIGHT-001",
+    "unit_id": "UNIT-B1-P03",
+    "vertical_id": "7A4B9C2D8E1F6G-FB1-UP03-R01",
+    "right_type": "parking_right",
+    "holder_name_masked": "R***H S***A",
+    "record_status": "active",
+    "document_reference": "DOC/DEMO/0001/2024",
+    "effective_date": "2024-03-01"
+  },
+  {
+    "right_id": "RIGHT-002",
+    "unit_id": "UNIT-B1-UTIL01",
+    "vertical_id": "7A4B9C2D8E1F6G-FB1-UUTIL01-R01",
+    "right_type": "utility_easement",
+    "holder_name_masked": "PUNE M***L CORP",
+    "record_status": "active",
+    "document_reference": "DOC/DEMO/0002/2024",
+    "effective_date": "2023-06-01"
+  },
+  {
+    "right_id": "RIGHT-003",
+    "unit_id": "UNIT-F01-101",
+    "vertical_id": "7A4B9C2D8E1F6G-F01-U101-R01",
+    "right_type": "ownership",
+    "holder_name_masked": "P***A D***I",
+    "record_status": "active",
+    "document_reference": "DOC/DEMO/0003/2024",
+    "effective_date": "2024-01-15"
+  },
+  {
+    "right_id": "RIGHT-004",
+    "unit_id": "UNIT-F01-102",
+    "vertical_id": "7A4B9C2D8E1F6G-F01-U102-R01",
+    "right_type": "ownership",
+    "holder_name_masked": "S***T M***R",
+    "record_status": "active",
+    "document_reference": "DOC/DEMO/0004/2024",
+    "effective_date": "2024-01-15"
+  },
+  {
+    "right_id": "RIGHT-005",
+    "unit_id": "UNIT-F02-201",
+    "vertical_id": "7A4B9C2D8E1F6G-F02-U201-R01",
+    "right_type": "ownership",
+    "holder_name_masked": "A***L K***R",
+    "record_status": "active",
+    "document_reference": "DOC/DEMO/0005/2024",
+    "effective_date": "2024-01-15"
+  },
+  {
+    "right_id": "RIGHT-006",
+    "unit_id": "UNIT-F02-202",
+    "vertical_id": "7A4B9C2D8E1F6G-F02-U202-R01",
+    "right_type": "ownership",
+    "holder_name_masked": "N***A G***E",
+    "record_status": "active",
+    "document_reference": "DOC/DEMO/0006/2024",
+    "effective_date": "2024-01-15"
+  },
+  {
+    "right_id": "RIGHT-007",
+    "unit_id": "UNIT-F03-301",
+    "vertical_id": "7A4B9C2D8E1F6G-F03-U301-R01",
+    "right_type": "ownership",
+    "holder_name_masked": "V***Y P***L",
+    "record_status": "active",
+    "document_reference": "DOC/DEMO/0007/2024",
+    "effective_date": "2024-01-15"
+  },
+  {
+    "right_id": "RIGHT-008",
+    "unit_id": "UNIT-F03-302",
+    "vertical_id": "7A4B9C2D8E1F6G-F03-U302-R01",
+    "right_type": "ownership",
+    "holder_name_masked": "M***A J***I",
+    "record_status": "under_review",
+    "document_reference": "DOC/DEMO/0008/2024",
+    "effective_date": "2024-01-15"
+  },
+  {
+    "right_id": "RIGHT-009",
+    "unit_id": "UNIT-F04-401",
+    "vertical_id": "7A4B9C2D8E1F6G-F04-U401-R01",
+    "right_type": "ownership",
+    "holder_name_masked": "K***N B***T",
+    "record_status": "active",
+    "document_reference": "DOC/DEMO/0009/2024",
+    "effective_date": "2024-01-15"
+  },
+  {
+    "right_id": "RIGHT-010",
+    "unit_id": "UNIT-F04-402",
+    "vertical_id": "7A4B9C2D8E1F6G-F04-U402-R01",
+    "right_type": "ownership",
+    "holder_name_masked": "D***K R***E",
+    "record_status": "active",
+    "document_reference": "DOC/DEMO/0010/2024",
+    "effective_date": "2024-01-15"
+  },
+  {
+    "right_id": "RIGHT-011",
+    "unit_id": "UNIT-F05-501",
+    "vertical_id": "7A4B9C2D8E1F6G-F05-U501-R01",
+    "right_type": "ownership",
+    "holder_name_masked": "T***A C***N",
+    "record_status": "active",
+    "document_reference": "DOC/DEMO/0011/2024",
+    "effective_date": "2024-01-15"
+  },
+  {
+    "right_id": "RIGHT-012",
+    "unit_id": "UNIT-F05-502",
+    "vertical_id": "7A4B9C2D8E1F6G-F05-U502-R01",
+    "right_type": "ownership",
+    "holder_name_masked": "J***S W***R",
+    "record_status": "active",
+    "document_reference": "DOC/DEMO/0012/2024",
+    "effective_date": "2024-01-15"
+  },
+  {
+    "right_id": "RIGHT-013",
+    "unit_id": "UNIT-F02-201",
+    "vertical_id": "7A4B9C2D8E1F6G-F02-U201-R01",
+    "right_type": "lease",
+    "holder_name_masked": "B***A T***T",
+    "record_status": "active",
+    "document_reference": "DOC/DEMO/0013/2024",
+    "effective_date": "2024-06-01"
+  }
+]

@@ -1,0 +1,37 @@
+{
+  "building_id": "BLD-GHA-001",
+  "parcel_id": "PRC-DW-001",
+  "parent_ulpin": "7A4B9C2D8E1F6G",
+  "building_name": "Green Heights Apartment",
+  "footprint": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          5.0,
+          5.0
+        ],
+        [
+          35.0,
+          5.0
+        ],
+        [
+          35.0,
+          25.0
+        ],
+        [
+          5.0,
+          25.0
+        ],
+        [
+          5.0,
+          5.0
+        ]
+      ]
+    ]
+  },
+  "total_height_m": 19.0,
+  "num_levels": 7,
+  "source_confidence_score": 0.92,
+  "source_type": "demo_floor_plan"
+}

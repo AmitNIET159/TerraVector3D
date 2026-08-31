@@ -1,0 +1,65 @@
+{
+  "building_id": "BLD-002",
+  "parent_ulpin": "7A4B9C2D8E1F6G",
+  "total_units": 9,
+  "total_conflicts": 3,
+  "conflicts_by_severity": {
+    "high": 1,
+    "low": 2
+  },
+  "conflicts_by_type": {
+    "VOLUME_OVERLAP": 1,
+    "UTILITY_EASEMENT_REVIEW": 2
+  },
+  "is_valid": false,
+  "conflicts": [
+    {
+      "conflict_id": "CONFLICT-EXAMPLE1",
+      "conflict_type": "VOLUME_OVERLAP",
+      "severity": "high",
+      "affected_unit_ids": ["U401", "U402"],
+      "affected_vertical_ids": [
+        "7A4B9C2D8E1F6G-F04-U401-R01",
+        "7A4B9C2D8E1F6G-F04-U402-R01"
+      ],
+      "horizontal_overlap_area_sqm": 3.4,
+      "overlapping_z_min_m": 9.0,
+      "overlapping_z_max_m": 12.0,
+      "estimated_overlap_volume_cum": 10.2,
+      "recommended_action": "Survey and adjust unit boundaries to eliminate the volumetric overlap.",
+      "human_readable_explanation": "Units overlap horizontally by 3.40 sq m within the same vertical range.  This is a high-severity ownership conflict requiring immediate resolution."
+    },
+    {
+      "conflict_id": "CONFLICT-EXAMPLE2",
+      "conflict_type": "UTILITY_EASEMENT_REVIEW",
+      "severity": "low",
+      "affected_unit_ids": ["UTIL01", "EASE01"],
+      "affected_vertical_ids": [
+        "7A4B9C2D8E1F6G-FB1-UUTIL01-R01",
+        "7A4B9C2D8E1F6G-FB1-UEASE01-R01"
+      ],
+      "horizontal_overlap_area_sqm": 6.0,
+      "overlapping_z_min_m": -2.0,
+      "overlapping_z_max_m": 0.0,
+      "estimated_overlap_volume_cum": 12.0,
+      "recommended_action": "Review utility and easement boundaries; overlap may be permissible but must be documented.",
+      "human_readable_explanation": "Utility/easement units overlap horizontally by 6.00 sq m.  This overlap is potentially acceptable but requires formal review."
+    },
+    {
+      "conflict_id": "CONFLICT-EXAMPLE3",
+      "conflict_type": "UTILITY_EASEMENT_REVIEW",
+      "severity": "low",
+      "affected_unit_ids": ["P01", "UTIL01"],
+      "affected_vertical_ids": [
+        "7A4B9C2D8E1F6G-FB1-UP01-R01",
+        "7A4B9C2D8E1F6G-FB1-UUTIL01-R01"
+      ],
+      "horizontal_overlap_area_sqm": 6.0,
+      "overlapping_z_min_m": -3.0,
+      "overlapping_z_max_m": 0.0,
+      "estimated_overlap_volume_cum": 18.0,
+      "recommended_action": "Review utility and easement boundaries; overlap may be permissible but must be documented.",
+      "human_readable_explanation": "Parking and utility unit overlap. Review required."
+    }
+  ]
+}
